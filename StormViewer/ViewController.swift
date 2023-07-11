@@ -24,6 +24,7 @@ class ViewController: UITableViewController {
         for item in items {
             if item.hasPrefix("nssl") {
                 pictures.append(item)
+                pictures.sort()  //extra task to sort the names of nsssl in rows
             }
         }
         print(pictures)

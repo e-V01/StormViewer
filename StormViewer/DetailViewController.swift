@@ -11,6 +11,9 @@ class DetailViewController: UIViewController {
     @IBOutlet var imageView: UIImageView!
     var selectedImage: String?
     
+    var selectedPictureNumber = 0 // extra task
+    var totalPictures = 0 // extra task
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,6 +34,8 @@ class DetailViewController: UIViewController {
         super.viewWillDisappear(animated)
         navigationController?.hidesBarsOnTap = false
     }
+    
+    
 
     /*
     // MARK: - Navigation
