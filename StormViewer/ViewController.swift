@@ -28,6 +28,9 @@ class ViewController: UITableViewController {
             }
         }
         print(pictures)
+        
+        let recommendButton = UIBarButtonItem(title: "Recommend", style: .plain, target: self, action: #selector(recommendApp))
+        navigationItem.rightBarButtonItem = recommendButton
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return pictures.count
@@ -44,5 +47,14 @@ class ViewController: UITableViewController {
             navigationController?.pushViewController(vc, animated: true)
         }
     }
+    
+    @objc func recommendApp() {
+        let shareText = "Check out this photo app!"
+        let shareURl = URL(string: "https://avatars.githubusercontent.com/u/190200")
+        
+        let activityViewController = UIActivityViewController(activityItems: [shareText, shareURl ?? "Unknown"], applicationActivities: nil)
+    present(activityViewController, animated: true, completion: nil)
+    }
+    
 }
 
